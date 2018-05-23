@@ -1,0 +1,91 @@
+Title         : 游戏
+
+Author        : blackfe
+Email         : blackfe2010@gmail.com
+
+
+[INCLUDE=book]
+[INCLUDE=webtoc]
+[INCLUDE=webanchors]
+
+[TITLE]
+
+~ Begin SidePanel
+[TOC]
+~ End SidePanel
+
+~ Begin MainPanel
+
+# 客户端     { #sec-intro }
+
+## 配置
+
+### 策划配表方式
+1. Excel
+主流使用Excel导出各种数据
+2. xml
+
+
+### 导出格式
+1. lua
+``` lua
+local data = {
+  switch = {heroId = 1,hp = 2}
+  [1] = {10001,100},
+  [2] = {10002,200}
+}
+return data
+```
+这种格式类似于CSV 优点是把key放到switch中，这样row data里面没有key，节省空间。但是解析的时候需要转换。有一定的性能损耗
+如果使用Lua的项目可以直接读取。
+2. json
+``` json
+[
+  {
+		"heroId": 10001,
+		"hp": 100
+  },
+  {
+		"heroId": 10002,
+		"hp": 200
+  }
+]
+```
+
+也是非常 通用的配置表格式,各种语言都能有第三方库扩展，缺点，在纯lua的项目里性能应该没有luaTable高，在lua和C#/C++混用的项目里
+说不定可以作为通用的配置表结构
+3. xml
+游戏应该不会使用这种结构，因为结构太复杂，解析也很费劲
+4. bytes
+在C++和C#项目里使用，解析快，存储空间小。但是基本没法热更新（IOS）。
+``` c++
+struct HeroInfo
+{
+  int heroId;
+  int Hp
+}
+map<int,HeroInfo> heroData;
+HeroInfo GetHeroInfo(int heroId)
+{
+  return heroData[heroId];
+}
+```
+使用sdp存储，文件大小减小（意义不大），实际使用内存一样，解析耗时稍微长一点
+5. csv
+``` csv
+heroId,hp
+10001,100
+10002,200
+```
+也是非常通用的配置格式，优点是默认字段可以省略，所以文件大小会小很多，效率没有原始的LuaTable或者bytes快
+
+
+### 总结
+在C#/C++的项目里使用 bytes比较好，sdp意义不大，在lua项目里使用luatable比较好。
+
+## UI
+### NGUI和UGUI的区别
+### UGUI的主要控件
+### UI优化
+
+~ End MainPanel
