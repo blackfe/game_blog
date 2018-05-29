@@ -26,6 +26,8 @@ Email         : blackfe2010@gmail.com
 2. xml
 
 
+主流方式
+
 ### 导出格式
 1. lua
 ``` lua
@@ -84,8 +86,38 @@ heroId,hp
 在C#/C++的项目里使用 bytes比较好，sdp意义不大，在lua项目里使用luatable比较好。
 
 ## UI
+
+### 画布(Canvas)
+Canvas 有三种模式
+- Screen Space - Overlay
+  这种模式Canvas下的UI会画在所有相机的最前面
+- Screen Space - Camera
+  这种模式Canvas下的UI会受到Camera的影响，始终跟随Camera移动
+- World Space
+  这种模式下Canvas下的UI表现会和其他场景中的物体一样，可以自由设置Transform
+  
+  
+
 ### NGUI和UGUI的区别
 ### UGUI的主要控件
 ### UI优化
+
+## 渲染
+
+## 物理
+
+## 网络
+
+## 动画
+
+## 声音
+
+## 平台
+
+## 导航和寻路
+
+
+
+
 
 ~ End MainPanel
