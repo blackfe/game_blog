@@ -88,10 +88,17 @@ heroId,hp
 ## 资源加载
 
 ###资源加载接口
-- Resource
+- Resources
+Resources接口加载的资源必须要位于“Resources”文件夹下，这个接口基本上是为了本地快速制作DEMO而设计的。
+不适用于商业化的项目研发
 - AssetsDataBase
+这个接口需要UnityEditor,它的主要作用是在资源导入时对资源做一些编辑。加载速度也比AssetBundle快（需要验证）
 - AssetsBundle
-- WWW
+如果是加载本地资源的话优先推荐这个接口。
+- WWW（废弃）
+- UnityWebRequest
+
+## 资源卸载
 
 ###资源加载路径
 
