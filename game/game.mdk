@@ -85,6 +85,16 @@ heroId,hp
 ### 总结
 在C#/C++的项目里使用 bytes比较好，sdp意义不大，在lua项目里使用luatable比较好。
 
+## 资源加载
+
+###资源加载接口
+- Resource
+- AssetsDataBase
+- AssetsBundle
+- WWW
+
+###资源加载路径
+
 ## UI
 
 ### 画布(Canvas)
@@ -107,6 +117,13 @@ Canvas 有三种模式
 ## 物理
 
 ## 网络
+
+### 协议
+- sdp
+- proto buff
+
+### 网络库
+
 
 ## 动画
 
